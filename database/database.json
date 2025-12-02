@@ -1,0 +1,133 @@
+{
+  "users": [
+    { "id": 1, "name": "Nicole D'Anton", "email": "nicole@noviconnect.com" },
+    { "id": 2, "name": "Evan Gardener", "email": "evan@example.com" },
+    { "id": 3, "name": "Sophie Sprout", "email": "sophie@example.com" }
+  ],
+
+  "light_requirements": [
+    { "id": 1, "type": "Full Sun" },
+    { "id": 2, "type": "Partial Sun" },
+    { "id": 3, "type": "Partial Shade" },
+    { "id": 4, "type": "Full Shade" }
+  ],
+
+  "planting_seasons": [
+    { "id": 1, "type": "Spring" },
+    { "id": 2, "type": "Summer" },
+    { "id": 3, "type": "Fall" },
+    { "id": 4, "type": "Winter" }
+  ],
+
+  "plants": [
+    {
+      "id": 1,
+      "user_owner_id": null,
+      "plant_type_name": "Tomato",
+      "varietal_name": "Cherry",
+      "spacing_width": 18,
+      "spacing_height": 24,
+      "light_requirement_id": 1,
+      "planting_season_id": 2
+    },
+    {
+      "id": 2,
+      "user_owner_id": null,
+      "plant_type_name": "Tomato",
+      "varietal_name": "Roma",
+      "spacing_width": 24,
+      "spacing_height": 24,
+      "light_requirement_id": 1,
+      "planting_season_id": 1
+    },
+    {
+      "id": 3,
+      "user_owner_id": null,
+      "plant_type_name": "Carrot",
+      "varietal_name": "Nantes",
+      "spacing_width": 2,
+      "spacing_height": 2,
+      "light_requirement_id": 2,
+      "planting_season_id": 1
+    },
+    {
+      "id": 4,
+      "user_owner_id": null,
+      "plant_type_name": "Basil",
+      "varietal_name": "Genovese",
+      "spacing_width": 12,
+      "spacing_height": 12,
+      "light_requirement_id": 1,
+      "planting_season_id": 2
+    },
+    {
+      "id": 5,
+      "user_owner_id": null,
+      "plant_type_name": "Lettuce",
+      "varietal_name": "Butterhead",
+      "spacing_width": 10,
+      "spacing_height": 10,
+      "light_requirement_id": 3,
+      "planting_season_id": 1
+    },
+
+   
+
+    {
+      "id": 6,
+      "user_owner_id": 1,
+      "plant_type_name": "Tomato",
+      "varietal_name": "Brandywine Heirloom",
+      "spacing_width": 24,
+      "spacing_height": 24,
+      "light_requirement_id": 1,
+      "planting_season_id": 2
+    },
+    {
+      "id": 7,
+      "user_owner_id": 1,
+      "plant_type_name": "Pepper",
+      "varietal_name": "California Wonder",
+      "spacing_width": 18,
+      "spacing_height": 18,
+      "light_requirement_id": 1,
+      "planting_season_id": 2
+    },
+    {
+      "id": 8,
+      "user_owner_id": 1,
+      "plant_type_name": "Onion",
+      "varietal_name": "Sweet Vidalia",
+      "spacing_width": 4,
+      "spacing_height": 4,
+      "light_requirement_id": 2,
+      "planting_season_id": 1
+    },
+    {
+      "id": 9,
+      "user_owner_id": 2,
+      "plant_type_name": "Strawberry",
+      "varietal_name": "Albion",
+      "spacing_width": 12,
+      "spacing_height": 12,
+      "light_requirement_id": 2,
+      "planting_season_id": 2
+    }
+  ],
+
+  "seed_stash": [
+    { "id": 1, "user_id": 1, "plant_id": 1 },
+    { "id": 2, "user_id": 1, "plant_id": 3 },
+    { "id": 3, "user_id": 1, "plant_id": 6 },
+    { "id": 4, "user_id": 1, "plant_id": 7 },
+    { "id": 5, "user_id": 2, "plant_id": 5 },
+    { "id": 6, "user_id": 2, "plant_id": 9 },
+    { "id": 7, "user_id": 3, "plant_id": 4 }
+  ],
+
+  "user_garden_bed": [
+    { "id": 1, "user_id": 1, "rows": 4, "cols": 8 },
+    { "id": 2, "user_id": 1, "rows": 2, "cols": 4 },
+    { "id": 3, "user_id": 2, "rows": 6, "cols": 10 }
+  ]
+}

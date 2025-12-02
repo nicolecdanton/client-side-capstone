@@ -1,0 +1,77 @@
+/* ============
+   Plant Library Layout
+   ============ */
+.plants-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: "Inter", sans-serif;
+}
+
+.plants-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #2f4f4f;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* Grid layout for the plant cards */
+.plants {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.25rem;
+  padding: 1rem 0;
+}
+
+/* ============
+   Plant Card Styling
+   ============ */
+.plant-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  border: 1px solid #e6e6e6;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.plant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+
+/* Header inside card */
+.plant-card-info {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2f4f4f;
+  margin-bottom: 0.75rem;
+}
+
+/* Plant detail text */
+.plant-card div {
+  font-size: 0.95rem;
+  color: #4a4a4a;
+  margin: 0.25rem 0;
+}
+
+/* Subtle style for labels */
+.plant-card div::before {
+  font-weight: 600;
+}
+
+/* Optional: Scroll container if library grows large */
+.plants-container {
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+
+.plants {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  padding: 1rem 0;
+}
