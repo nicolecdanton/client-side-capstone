@@ -19,6 +19,11 @@
       "email": "newMember@test.com",
       "name": "Test",
       "id": 4
+    },
+    {
+      "email": "newtest@test.com",
+      "name": "test 2",
+      "id": 5
     }
   ],
   "light_requirements": [
