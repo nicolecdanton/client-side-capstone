@@ -1,6 +1,6 @@
 import "./Plant.css"
 
-export const PlantCard = ({ plant, lightRequirements, plantingSeasons }) => {
+export const PlantCard = ({ plant, lightRequirements, plantingSeasons}) => {
    const lightType = lightRequirements.find((light) => 
     light.id === plant.light_requirement_id)?.type;
 

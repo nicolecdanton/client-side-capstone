@@ -6,7 +6,7 @@ import { getCustomPlantsForUser } from "../../services/customPlantService";
 import { getAllLightRequirements } from "../../services/lightService";
 import { getAllPlantingSeasons } from "../../services/plantingSeasonService";
 
-export const PlantList = () => {
+export const PlantList = ( { currentUser } ) => {
     const [allPlants, setAllPlants] = useState([])
     const [customPlants, setCustomPlants] = useState([])
     const [lightReqs, setLightReqs] = useState([]);
@@ -25,7 +25,7 @@ export const PlantList = () => {
     //Custom Plant Library fetch and set
   const getAndSetCustomPlants = () => {
     //get custom plants function
-    getCustomPlantsForUser(1).then((customPlantsArray) => {
+    getCustomPlantsForUser(currentUser.id).then((customPlantsArray) => {
       //set custom plants state
       setCustomPlants(customPlantsArray)
     })
