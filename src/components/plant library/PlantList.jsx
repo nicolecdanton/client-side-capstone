@@ -34,10 +34,16 @@ export const PlantList = ( { currentUser } ) => {
   //Initial data load
   useEffect(() => {
     getAndSetPlants()
-    getAndSetCustomPlants()
     getAllLightRequirements().then(setLightReqs);
     getAllPlantingSeasons().then(setAllPlantingSeasons);
      }, [])
+
+  //Load custom plants when currentUser is available
+  useEffect(() => {
+    if (currentUser?.id) {
+      getAndSetCustomPlants()
+    }
+  }, [currentUser])
 
   
 
