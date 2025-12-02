@@ -6,8 +6,7 @@ import { createUser, getUserByEmail } from "../../services/userService"
 export const Register = (props) => {
   const [customer, setCustomer] = useState({
     email: "",
-    fullName: "",
-    isStaff: false,
+    name: "",
   })
   let navigate = useNavigate()
 
@@ -15,10 +14,9 @@ export const Register = (props) => {
     createUser(customer).then((createdUser) => {
       if (createdUser.hasOwnProperty("id")) {
         localStorage.setItem(
-          "honey_user",
+          "garden_user",
           JSON.stringify({
             id: createdUser.id,
-            staff: createdUser.isStaff,
           })
         )
 
@@ -56,7 +54,7 @@ export const Register = (props) => {
             <input
               onChange={updateCustomer}
               type="text"
-              id="fullName"
+              id="name"
               className="form-control"
               placeholder="Enter your name"
               required
@@ -74,22 +72,6 @@ export const Register = (props) => {
               placeholder="Email address"
               required
             />
-          </div>
-        </fieldset>
-        <fieldset>
-          <div className="form-group">
-            <label>
-              <input
-                onChange={(evt) => {
-                  const copy = { ...customer }
-                  copy.isStaff = evt.target.checked
-                  setCustomer(copy)
-                }}
-                type="checkbox"
-                id="isStaff"
-              />
-              I am an employee{" "}
-            </label>
           </div>
         </fieldset>
         <fieldset>
