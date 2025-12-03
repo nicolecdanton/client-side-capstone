@@ -6,6 +6,7 @@ import { getCustomPlantsForUser } from "../../services/customPlantService";
 import { getAllLightRequirements } from "../../services/lightService";
 import { getAllPlantingSeasons } from "../../services/plantingSeasonService";
 import { getStashbyUserId } from "../../services/stashService";
+import { CustomPlantCard } from "./CustomPlantCard";
 
 export const PlantList = ( { currentUser } ) => {
     const [allPlants, setAllPlants] = useState([])
@@ -16,23 +17,13 @@ export const PlantList = ( { currentUser } ) => {
 
 
 
-    //Plant Library fetch and set
+  //Plant Library fetch and set
   const getAndSetPlants = () => {
     getAllGlobalPlants().then((plantsArray) => {
     setAllPlants(plantsArray)
-    console.log("Plants set")
       })
   }
 
-
-    //Custom Plant Library fetch and set
-  const getAndSetCustomPlants = () => {
-      //get custom plants function
-      getCustomPlantsForUser(currentUser.id).then((customPlantsArray) => {
-      //set custom plants state
-      setCustomPlants(customPlantsArray)
-    })
-  }
 
   //Initial data load
   useEffect(() => {
@@ -41,24 +32,27 @@ export const PlantList = ( { currentUser } ) => {
     getAllPlantingSeasons().then(setAllPlantingSeasons);
      }, [])
 
-  //Load custom plants when currentUser is available
-  useEffect(() => {
-      getAndSetCustomPlants()
-  }, [])
-
   
+  
+  const refreshCustomPlants = () => {
+    if (currentUser?.id) {
+      getCustomPlantsForUser(currentUser.id).then(setCustomPlants);
+    }
+  };
 
+  const refreshStash = () => {
+    getStashbyUserId(currentUser.id).then(setStashItems);
+  };
 
-const refreshStash = () => {
-  getStashbyUserId(currentUser.id).then(setStashItems);
-};
+// User-dependent data
+  useEffect(() => {
+    if (currentUser?.id) {
+      refreshCustomPlants();
+      refreshStash();
+    }
+  }, [currentUser?.id]);
 
-useEffect(() => {
-  if (currentUser?.id) {
-    refreshStash();
-  }
-}, [currentUser?.id]);
-
+ 
 
 const plantIdsInStash = new Set(stashItems.map((s) => s.plantId));
 
@@ -87,7 +81,7 @@ return (
     <h2>My Custom Plants</h2>
       <article className="plants"></article>
         {customPlants.map(customPlantObj => {
-            return <PlantCard 
+            return <CustomPlantCard 
                       plant={customPlantObj} 
                       lightRequirements={lightReqs} 
                       plantingSeasons={allPlantingSeasons} 

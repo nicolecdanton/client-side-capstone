@@ -275,11 +275,11 @@
     },
     {
       "user_owner_id": 1,
-      "plant_type_name": "Onion",
-      "varietal_name": "Spanish",
+      "plant_type_name": "Custom",
+      "varietal_name": "Custom",
       "light_requirement_id": 3,
       "planting_season_id": 3,
-      "color": "#FFA726",
+      "color": "#81C784",
       "id": 25
     }
   ],
@@ -287,37 +287,7 @@
     {
       "userId": 1,
       "plantId": 25,
-      "id": 2
-    },
-    {
-      "userId": 1,
-      "plantId": 2,
-      "id": 4
-    },
-    {
-      "userId": 1,
-      "plantId": 10,
-      "id": 5
-    },
-    {
-      "userId": 1,
-      "plantId": 15,
-      "id": 6
-    },
-    {
-      "userId": 1,
-      "plantId": 1,
-      "id": 7
-    },
-    {
-      "userId": 1,
-      "plantId": 11,
-      "id": 8
-    },
-    {
-      "userId": 1,
-      "plantId": 12,
-      "id": 9
+      "id": 1
     }
   ],
   "user_garden_bed": [
