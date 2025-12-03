@@ -66,129 +66,258 @@
     {
       "id": 1,
       "user_owner_id": null,
-      "plant_type_name": "Tomato",
-      "varietal_name": "Cherry",
-      "spacing_width": 18,
-      "spacing_height": 24,
-      "light_requirement_id": 1,
-      "planting_season_id": 2
+      "plant_type_name": "Lettuce",
+      "varietal_name": "Romaine",
+      "spacing_width": 6,
+      "spacing_height": 6,
+      "light_requirement_id": 2,
+      "planting_season_id": 1,
+      "color": "#8BC34A",
+      "stashed_by_users": [
+        1
+      ]
     },
     {
       "id": 2,
       "user_owner_id": null,
+      "plant_type_name": "Lettuce",
+      "varietal_name": "Butterhead",
+      "spacing_width": 6,
+      "spacing_height": 6,
+      "light_requirement_id": 2,
+      "planting_season_id": 1,
+      "color": "#AED581",
+      "stashed_by_users": [
+        1
+      ]
+    },
+    {
+      "id": 10,
+      "user_owner_id": null,
       "plant_type_name": "Tomato",
-      "varietal_name": "Roma",
+      "varietal_name": "Cherry Sweet",
+      "spacing_width": 18,
+      "spacing_height": 24,
+      "light_requirement_id": 1,
+      "planting_season_id": 2,
+      "color": "#FF4B4B",
+      "stashed_by_users": [
+        1
+      ]
+    },
+    {
+      "id": 11,
+      "user_owner_id": null,
+      "plant_type_name": "Tomato",
+      "varietal_name": "Beefsteak",
       "spacing_width": 24,
       "spacing_height": 24,
       "light_requirement_id": 1,
-      "planting_season_id": 1
+      "planting_season_id": 2,
+      "color": "#FF6A6A",
+      "stashed_by_users": []
     },
     {
-      "id": 3,
+      "id": 12,
       "user_owner_id": null,
       "plant_type_name": "Carrot",
-      "varietal_name": "Nantes",
+      "varietal_name": "Danvers",
       "spacing_width": 2,
       "spacing_height": 2,
       "light_requirement_id": 2,
-      "planting_season_id": 1
+      "planting_season_id": 1,
+      "color": "#FFA726",
+      "stashed_by_users": []
     },
     {
-      "id": 4,
+      "id": 13,
       "user_owner_id": null,
-      "plant_type_name": "Basil",
-      "varietal_name": "Genovese",
-      "spacing_width": 12,
-      "spacing_height": 12,
-      "light_requirement_id": 1,
-      "planting_season_id": 2
+      "plant_type_name": "Carrot",
+      "varietal_name": "Parisian",
+      "spacing_width": 3,
+      "spacing_height": 3,
+      "light_requirement_id": 2,
+      "planting_season_id": 1,
+      "color": "#FF8F00",
+      "stashed_by_users": []
     },
     {
-      "id": 5,
+      "id": 14,
       "user_owner_id": null,
-      "plant_type_name": "Lettuce",
-      "varietal_name": "Butterhead",
-      "spacing_width": 10,
-      "spacing_height": 10,
+      "plant_type_name": "Spinach",
+      "varietal_name": "Bloomsdale",
+      "spacing_width": 6,
+      "spacing_height": 6,
       "light_requirement_id": 3,
-      "planting_season_id": 1
+      "planting_season_id": 1,
+      "color": "#4CAF50",
+      "stashed_by_users": []
     },
     {
-      "id": 6,
-      "user_owner_id": 1,
-      "plant_type_name": "Tomato",
-      "varietal_name": "Brandywine Heirloom",
-      "spacing_width": 24,
-      "spacing_height": 24,
-      "light_requirement_id": 1,
-      "planting_season_id": 2
+      "id": 15,
+      "user_owner_id": null,
+      "plant_type_name": "Spinach",
+      "varietal_name": "Space Hybrid",
+      "spacing_width": 7,
+      "spacing_height": 7,
+      "light_requirement_id": 3,
+      "planting_season_id": 1,
+      "color": "#66BB6A",
+      "stashed_by_users": []
     },
     {
-      "id": 7,
-      "user_owner_id": 1,
+      "id": 16,
+      "user_owner_id": null,
       "plant_type_name": "Pepper",
-      "varietal_name": "California Wonder",
+      "varietal_name": "Jalapeño",
       "spacing_width": 18,
       "spacing_height": 18,
       "light_requirement_id": 1,
-      "planting_season_id": 2
+      "planting_season_id": 2,
+      "color": "#D84315",
+      "stashed_by_users": []
     },
     {
-      "id": 8,
-      "user_owner_id": 1,
-      "plant_type_name": "Onion",
-      "varietal_name": "Sweet Vidalia",
-      "spacing_width": 4,
-      "spacing_height": 4,
+      "id": 17,
+      "user_owner_id": null,
+      "plant_type_name": "Pepper",
+      "varietal_name": "Bell Pepper",
+      "spacing_width": 18,
+      "spacing_height": 18,
+      "light_requirement_id": 1,
+      "planting_season_id": 2,
+      "color": "#E64A19",
+      "stashed_by_users": []
+    },
+    {
+      "id": 18,
+      "user_owner_id": null,
+      "plant_type_name": "Cucumber",
+      "varietal_name": "Marketmore 76",
+      "spacing_width": 12,
+      "spacing_height": 36,
+      "light_requirement_id": 1,
+      "planting_season_id": 2,
+      "color": "#43A047",
+      "stashed_by_users": []
+    },
+    {
+      "id": 19,
+      "user_owner_id": null,
+      "plant_type_name": "Cucumber",
+      "varietal_name": "Lemon",
+      "spacing_width": 12,
+      "spacing_height": 36,
+      "light_requirement_id": 1,
+      "planting_season_id": 2,
+      "color": "#7CB342",
+      "stashed_by_users": []
+    },
+    {
+      "id": 20,
+      "user_owner_id": null,
+      "plant_type_name": "Radish",
+      "varietal_name": "French Breakfast",
+      "spacing_width": 2,
+      "spacing_height": 2,
       "light_requirement_id": 2,
-      "planting_season_id": 1
+      "planting_season_id": 1,
+      "color": "#E91E63",
+      "stashed_by_users": []
     },
     {
-      "id": 9,
-      "user_owner_id": 2,
-      "plant_type_name": "Strawberry",
-      "varietal_name": "Albion",
+      "id": 21,
+      "user_owner_id": null,
+      "plant_type_name": "Radish",
+      "varietal_name": "Cherry Belle",
+      "spacing_width": 2,
+      "spacing_height": 2,
+      "light_requirement_id": 2,
+      "planting_season_id": 1,
+      "color": "#EC407A",
+      "stashed_by_users": []
+    },
+    {
+      "id": 22,
+      "user_owner_id": null,
+      "plant_type_name": "Kale",
+      "varietal_name": "Lacinato",
       "spacing_width": 12,
       "spacing_height": 12,
       "light_requirement_id": 2,
-      "planting_season_id": 2
+      "planting_season_id": 3,
+      "color": "#1B5E20",
+      "stashed_by_users": []
+    },
+    {
+      "id": 23,
+      "user_owner_id": null,
+      "plant_type_name": "Kale",
+      "varietal_name": "Red Russian",
+      "spacing_width": 12,
+      "spacing_height": 12,
+      "light_requirement_id": 2,
+      "planting_season_id": 3,
+      "color": "#33691E",
+      "stashed_by_users": []
+    },
+    {
+      "id": 24,
+      "user_owner_id": null,
+      "plant_type_name": "Zucchini",
+      "varietal_name": "Black Beauty",
+      "spacing_width": 24,
+      "spacing_height": 36,
+      "light_requirement_id": 1,
+      "planting_season_id": 2,
+      "color": "#8BC34A",
+      "stashed_by_users": []
+    },
+    {
+      "user_owner_id": 1,
+      "plant_type_name": "Onion",
+      "varietal_name": "Spanish",
+      "light_requirement_id": 3,
+      "planting_season_id": 3,
+      "color": "#FFA726",
+      "id": 25
     }
   ],
   "seed_stash": [
     {
-      "id": 1,
-      "user_id": 1,
-      "plant_id": 1
+      "userId": 1,
+      "plantId": 25,
+      "id": 2
     },
     {
-      "id": 2,
-      "user_id": 1,
-      "plant_id": 3
+      "userId": 1,
+      "plantId": 2,
+      "id": 4
     },
     {
-      "id": 3,
-      "user_id": 1,
-      "plant_id": 6
+      "userId": 1,
+      "plantId": 10,
+      "id": 5
     },
     {
-      "id": 4,
-      "user_id": 1,
-      "plant_id": 7
+      "userId": 1,
+      "plantId": 15,
+      "id": 6
     },
     {
-      "id": 5,
-      "user_id": 2,
-      "plant_id": 5
+      "userId": 1,
+      "plantId": 1,
+      "id": 7
     },
     {
-      "id": 6,
-      "user_id": 2,
-      "plant_id": 9
+      "userId": 1,
+      "plantId": 11,
+      "id": 8
     },
     {
-      "id": 7,
-      "user_id": 3,
-      "plant_id": 4
+      "userId": 1,
+      "plantId": 12,
+      "id": 9
     }
   ],
   "user_garden_bed": [

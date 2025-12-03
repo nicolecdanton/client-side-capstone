@@ -1,0 +1,72 @@
+.stash-pill {
+  display: flex;
+  flex-direction: column;       /* THIS forces stacked text */
+  align-items: flex-start;      /* left-align inside the pill */
+  justify-content: center;
+
+  padding: 12px 22px;
+  margin: 10px;
+
+  border-radius: 9999px;        /* perfect oval */
+
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.18);
+
+  min-width: 140px;             /* keeps pills from collapsing */
+  width: fit-content;
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.stash-header {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.stash-subheader {
+  margin: 2px 0 0 0;
+  padding: 0;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.1;
+  opacity: 0.9;
+}
+
+.stash-pill:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+
+.stash-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* FORCE 3 columns */
+  gap: 16px 20px; /* vertical and horizontal spacing */
+  padding: 12px 0;
+}
+
+
+.delete-stash-btn {
+  border: none;
+  background: rgba(0,0,0,0.25);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: auto;   /* push to the right */
+  margin-top: -4px;
+}
+
+.delete-stash-btn:hover {
+  background: rgba(0,0,0,0.4);
+}
