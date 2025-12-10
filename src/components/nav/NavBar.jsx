@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 export const NavBar = () => {
-    const navigate = useNavigate();
+    const navigate = useNavigate()
     return (
         <ul className="navbar">
             <li className="navbar-item navbar-home">
@@ -14,6 +14,9 @@ export const NavBar = () => {
             </li>
             <li className="navbar-item">
                 <Link to ="/my-stash">My Stash</Link>
+            </li>
+            <li className="navbar-item">
+                <Link to ="/planner">Garden Planner</Link>
             </li>
                 {localStorage.getItem("garden_user") ? (
             <li className="navbar-item navbar-logout">

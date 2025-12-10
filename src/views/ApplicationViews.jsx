@@ -3,6 +3,7 @@ import { NavBar } from "../components/nav/NavBar"
 import { PlantLibrary } from "../components/plant library/PlantLibrary"
 import { Welcome } from "../components/welcome/Welcome"
 import { MyStash } from "../components/my stash/MyStash"
+import { GardenPlanner } from "../components/planner/GardenPlanner"
 import { useEffect, useState } from "react"
 
 
@@ -27,8 +28,9 @@ export const ApplicationViews = () => {
             <Outlet />
           </> } >
         <Route index element={<Welcome />} />
-        <Route path="plant-library" element={ <PlantLibrary currentUser={currentUser}/> } /> 
+        <Route path="plant-library" element={ <PlantLibrary currentUser={currentUser}/> } />
         <Route path="my-stash" element={ <MyStash currentUser={currentUser}/> } />
+        <Route path="planner" element={ <GardenPlanner currentUser={currentUser}/> } />
       </Route>
     </Routes></>
 }

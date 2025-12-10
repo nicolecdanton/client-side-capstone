@@ -332,6 +332,31 @@
       "userId": 1,
       "plantId": 28,
       "id": 12
+    },
+    {
+      "userId": 6,
+      "plantId": 11,
+      "id": 13
+    },
+    {
+      "userId": 6,
+      "plantId": 15,
+      "id": 14
+    },
+    {
+      "userId": 2,
+      "plantId": 10,
+      "id": 17
+    },
+    {
+      "userId": 2,
+      "plantId": 12,
+      "id": 18
+    },
+    {
+      "userId": 2,
+      "plantId": 16,
+      "id": 19
     }
   ],
   "user_garden_bed": []
