@@ -76,7 +76,7 @@ export const AddToStashForm = ({ currentUser, refreshTheStash, existingPlant, on
   };
 
 
-  //  MAIN SUBMIT HANDLER
+  //  When i submit the form, stuff has to happen: either create new plant and add to stash, or update existing plant. 
   const handleSubmit = async (e) => {
         e.preventDefault();
 
