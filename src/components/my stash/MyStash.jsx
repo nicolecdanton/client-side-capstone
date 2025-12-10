@@ -1,21 +1,21 @@
-import { StashItem } from "./StashItem";
-import { useEffect, useState } from "react";
-import { getStashbyUserId } from "../../services/stashService";
+import { StashItem } from "./StashItem"
+import { useEffect, useState } from "react"
+import { getStashbyUserId } from "../../services/stashService"
 import "./Stash.css"
-import { AddToStashForm } from "./AddToStashForm";
+import { AddToStashForm } from "./AddToStashForm"
 
 export const MyStash = ({ currentUser }) => {
-    const [stashItems, setStashItems] = useState([]);
+    const [stashItems, setStashItems] = useState([])
 
     //a function that will support refreshing the stash. We'll need this when things are added, deleted, or updated (though Add action on Plant Library page, through delete button on StashItem card, or through custom plan form). We'll need to pass it as a prop to those components.
     const refreshTheStash = () => {
-        getStashbyUserId(currentUser.id).then((data) => setStashItems(data));
-    };
+        getStashbyUserId(currentUser.id).then((data) => setStashItems(data))
+    }
 
     //reload the stash IF the current user changes
     useEffect(() => {
-        refreshTheStash();
-        }, [currentUser.id]);
+        refreshTheStash()
+        }, [currentUser.id])
 
     return (
         <div>

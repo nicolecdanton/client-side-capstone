@@ -9,8 +9,8 @@ export const StashItem = ({ stashItem, refreshTheStash }) => {
             refreshTheStash()})
             if (stashItem.plant.user_owner_id)
                 removeCustomPlant(stashItem.plant.id).then(() => {
-                refreshTheStash()});
-    };
+                refreshTheStash()})
+    }
 
     return (
         <div className="stash-pill"

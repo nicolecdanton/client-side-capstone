@@ -1,10 +1,10 @@
-import { useState } from "react";
-import "./Plant.css";
-import { CustomPlantEditModal } from "./CustomPlantEditModal";
-import { AddToStashForm } from "../my stash/AddToStashForm";
+import { useState } from "react"
+import "./Plant.css"
+import { CustomPlantEditModal } from "./CustomPlantEditModal"
+import { AddToStashForm } from "../my stash/AddToStashForm"
 
 export const CustomPlantCard = ({ plant, lightRequirements, plantingSeasons, currentUser, refreshTheStash }) => {
-  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false)
 
   const lightType = lightRequirements.find(
     (light) => light.id === plant.light_requirement_id
@@ -15,12 +15,12 @@ export const CustomPlantCard = ({ plant, lightRequirements, plantingSeasons, cur
   )?.type
 
   const handleEditClick = () => {
-    setIsEditModalOpen(true);
-  };
+    setIsEditModalOpen(true)
+  }
 
   const handleCloseModal = () => {
-    setIsEditModalOpen(false);
-  };
+    setIsEditModalOpen(false)
+  }
 
   return (
     <>
@@ -49,5 +49,5 @@ export const CustomPlantCard = ({ plant, lightRequirements, plantingSeasons, cur
         />
       </CustomPlantEditModal>
     </>
-  );
+  )
 }

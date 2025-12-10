@@ -1,7 +1,7 @@
 import "./CustomPlantEditModal.css";
 
 export const CustomPlantEditModal = ({ isOpen, onClose, children }) => {
-  if (!isOpen) return null;
+  if (!isOpen) return null
 
   return (
 
@@ -13,5 +13,5 @@ export const CustomPlantEditModal = ({ isOpen, onClose, children }) => {
         {children} {/* basically read this as <AddToStashForm with its props />*/}
       </div>
     </div>
-  );
-};
+  )
+}

@@ -11,9 +11,9 @@ import { CustomPlantCard } from "./CustomPlantCard";
 export const PlantLibrary = ( { currentUser } ) => {
     const [allPlants, setAllPlants] = useState([])
     const [customPlants, setCustomPlants] = useState([])
-    const [lightReqs, setLightReqs] = useState([]);
-    const [allPlantingSeasons, setAllPlantingSeasons] = useState([]);
-    const [stashItems, setStashItems] = useState([]);
+    const [lightReqs, setLightReqs] = useState([])
+    const [allPlantingSeasons, setAllPlantingSeasons] = useState([])
+    const [stashItems, setStashItems] = useState([])
 
 
 
@@ -28,29 +28,29 @@ export const PlantLibrary = ( { currentUser } ) => {
   //Initial data load
   useEffect(() => {
     getAndSetPlants()
-    getAllLightRequirements().then(setLightReqs);
-    getAllPlantingSeasons().then(setAllPlantingSeasons);
+    getAllLightRequirements().then(setLightReqs)
+    getAllPlantingSeasons().then(setAllPlantingSeasons)
      }, [])
 
   
   
   const refreshCustomPlants = () => {
     if (currentUser?.id) {
-      getCustomPlantsForUser(currentUser.id).then(setCustomPlants);
+      getCustomPlantsForUser(currentUser.id).then(setCustomPlants)
     }
-  };
+  }
 
   const refreshStash = () => {
-    getStashbyUserId(currentUser.id).then(setStashItems);
+    getStashbyUserId(currentUser.id).then(setStashItems)
   };
 
 // User-dependent data
   useEffect(() => {
     if (currentUser?.id) {
-      refreshCustomPlants();
-      refreshStash();
+      refreshCustomPlants()
+      refreshStash()
     }
-  }, [currentUser?.id]);
+  }, [currentUser?.id])
 
  
 

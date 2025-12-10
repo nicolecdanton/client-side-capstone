@@ -93,9 +93,9 @@ export const AddToStashForm = ({ currentUser, refreshTheStash, existingPlant, on
 
             updateCustomPlant(existingPlant.id, updatedPlant)
                 .then(() => {
-                    refreshTheStash();
-                    if (onClose) onClose();
-                });
+                    refreshTheStash()
+                    if (onClose) onClose()
+                })
         } else {
             // Create new plant and add to stash
             createPlantForCurrentUser()
@@ -103,11 +103,11 @@ export const AddToStashForm = ({ currentUser, refreshTheStash, existingPlant, on
                 return addPlantToStashForCurrentUser(createdPlant.id);
                 })
                 .then(() => {
-                resetForm();
-                refreshTheStash();
-                });
+                resetForm()
+                refreshTheStash()
+                })
         }
-        };
+        }
 
 
   return (
@@ -183,5 +183,5 @@ export const AddToStashForm = ({ currentUser, refreshTheStash, existingPlant, on
         {isEditMode ? "Update Plant" : "Add to Stash"}
       </button>
     </form>
-  );
-};
+  )
+}

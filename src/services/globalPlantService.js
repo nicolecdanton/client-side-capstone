@@ -6,5 +6,5 @@ export const getAllGlobalPlants = () => {
         (plant) =>
           plant.user_owner_id === null
       )
-    );
+    )
 };

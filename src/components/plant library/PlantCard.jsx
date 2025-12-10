@@ -1,6 +1,6 @@
 
-import { addPlantToStash } from "../../services/stashService";
-import "./Plant.css";
+import { addPlantToStash } from "../../services/stashService"
+import "./Plant.css"
 
 export const PlantCard = ({ plant, lightRequirements, plantingSeasons, currentUser, isInStash, refreshStash }) => {
 
@@ -21,7 +21,7 @@ export const PlantCard = ({ plant, lightRequirements, plantingSeasons, currentUs
       }
 
      addPlantToStash(stashItem).then(() => {
-      refreshStash();
+      refreshStash()
       })
   }
 
@@ -42,5 +42,5 @@ export const PlantCard = ({ plant, lightRequirements, plantingSeasons, currentUs
         </button>
       )}
     </section>
-  );
+  )
 }
