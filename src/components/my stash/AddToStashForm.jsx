@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { getAllLightRequirements } from "../../services/lightService";
 import { getAllPlantingSeasons } from "../../services/plantingSeasonService";
-import { addCustomPlant } from "../../services/customPlantService";
-import { addToStash } from "../../services/stashService";
+import { addCustomPlant, updateCustomPlant } from "../../services/customPlantService";
+import { addPlantToStash } from "../../services/stashService";
 import "./Stash.css";
 
 const COLOR_OPTIONS = [
@@ -18,13 +18,15 @@ const COLOR_OPTIONS = [
   "#EC407A"  // pink
 ];
 
-export const AddToStashForm = ({ currentUser, refreshTheStash }) => {
-  // form state
-  const [plantTypeName, setPlantTypeName] = useState("");
-  const [varietalName, setVarietalName] = useState("");
-  const [lightRequirementId, setLightRequirementId] = useState("");
-  const [plantingSeasonId, setPlantingSeasonId] = useState("");
-  const [color, setColor] = useState(COLOR_OPTIONS[0]);
+export const AddToStashForm = ({ currentUser, refreshTheStash, existingPlant, onClose }) => {
+  const isEditMode = !!existingPlant;
+
+  // form state stuff - initialize with existing plant data if in edit mode, or empty if adding totally new
+  const [plantTypeName, setPlantTypeName] = useState(existingPlant?.plant_type_name || "");
+  const [varietalName, setVarietalName] = useState(existingPlant?.varietal_name || "");
+  const [lightRequirementId, setLightRequirementId] = useState(existingPlant?.light_requirement_id?.toString() || "");
+  const [plantingSeasonId, setPlantingSeasonId] = useState(existingPlant?.planting_season_id?.toString() || "");
+  const [color, setColor] = useState(existingPlant?.color || COLOR_OPTIONS[0]);
 
   const [lightRequirements, setLightRequirements] = useState([]);
   const [plantingSeasons, setPlantingSeasons] = useState([]);
@@ -38,7 +40,7 @@ export const AddToStashForm = ({ currentUser, refreshTheStash }) => {
 
 
   
-  //  Create a plant for this user
+  //  Create a custom plant, owned by this user
   const createPlantForCurrentUser = () => {
         const newPlant = {
             user_owner_id: currentUser.id,
@@ -53,18 +55,18 @@ export const AddToStashForm = ({ currentUser, refreshTheStash }) => {
   };
 
   
-  //  Add created plant to seed stash
+  //  Add created plant to users stash
   const addPlantToStashForCurrentUser = (plantId) => {
     const stashItem = {
       userId: currentUser.id,
       plantId: plantId
     };
 
-    return addToStash(stashItem);
+    return addPlantToStash(stashItem);
   };
 
   
-  //  Reset form
+  //  Reset form (to be used on click of submitting form)
   const resetForm = () => {
     setPlantTypeName("");
     setVarietalName("");
@@ -78,20 +80,39 @@ export const AddToStashForm = ({ currentUser, refreshTheStash }) => {
   const handleSubmit = async (e) => {
         e.preventDefault();
 
-        createPlantForCurrentUser()
-            .then((createdPlant) => {
-            return addPlantToStashForCurrentUser(createdPlant.id);
-            })
-            .then(() => {
-            resetForm();
-            refreshTheStash();
-            });
+        if (isEditMode) {
+            // Update existing plant
+            const updatedPlant = {
+                user_owner_id: currentUser.id,
+                plant_type_name: plantTypeName,
+                varietal_name: varietalName,
+                light_requirement_id: parseInt(lightRequirementId),
+                planting_season_id: parseInt(plantingSeasonId),
+                color: color
+            };
+
+            updateCustomPlant(existingPlant.id, updatedPlant)
+                .then(() => {
+                    refreshTheStash();
+                    if (onClose) onClose();
+                });
+        } else {
+            // Create new plant and add to stash
+            createPlantForCurrentUser()
+                .then((createdPlant) => {
+                return addPlantToStashForCurrentUser(createdPlant.id);
+                })
+                .then(() => {
+                resetForm();
+                refreshTheStash();
+                });
+        }
         };
 
 
   return (
     <form className="stash-form" onSubmit={handleSubmit}>
-      <h3>Add Custom Plant to Stash</h3>
+      <h3>{isEditMode ? "Edit Plant" : "Add Custom Plant to Stash"}</h3>
 
       <label>
         Plant Name
@@ -159,7 +180,7 @@ export const AddToStashForm = ({ currentUser, refreshTheStash }) => {
       </div>
 
       <button type="submit" className="stash-submit-btn">
-        Add to Stash
+        {isEditMode ? "Update Plant" : "Add to Stash"}
       </button>
     </form>
   );

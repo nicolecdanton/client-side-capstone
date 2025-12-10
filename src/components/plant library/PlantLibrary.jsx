@@ -8,7 +8,7 @@ import { getAllPlantingSeasons } from "../../services/plantingSeasonService";
 import { getStashbyUserId } from "../../services/stashService";
 import { CustomPlantCard } from "./CustomPlantCard";
 
-export const PlantList = ( { currentUser } ) => {
+export const PlantLibrary = ( { currentUser } ) => {
     const [allPlants, setAllPlants] = useState([])
     const [customPlants, setCustomPlants] = useState([])
     const [lightReqs, setLightReqs] = useState([]);
@@ -81,12 +81,13 @@ return (
     <h2>My Custom Plants</h2>
       <article className="plants"></article>
         {customPlants.map(customPlantObj => {
-            return <CustomPlantCard 
-                      plant={customPlantObj} 
-                      lightRequirements={lightReqs} 
-                      plantingSeasons={allPlantingSeasons} 
+            return <CustomPlantCard
+                      plant={customPlantObj}
+                      lightRequirements={lightReqs}
+                      plantingSeasons={allPlantingSeasons}
                       key= {customPlantObj.id}
                       currentUser={currentUser}
+                      refreshTheStash={refreshCustomPlants}
                       />
         })}
     </div>

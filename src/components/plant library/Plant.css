@@ -1,89 +1,266 @@
-/* ============
+/* ========================================
    Plant Library Layout
-   ============ */
+   ======================================== */
+
 .plants-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 2rem;
-  font-family: "Inter", sans-serif;
+  padding: var(--space-xl) var(--space-lg);
 }
 
 .plants-container h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #2f4f4f;
+  font-size: 2.5rem;
+  margin-bottom: var(--space-xl);
+  color: var(--text-primary);
   text-align: center;
-  letter-spacing: 1px;
+  font-family: var(--font-family-accent);
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
-/* Grid layout for the plant cards */
+.plants-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-xl);
+  padding: var(--space-lg);
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+/* ========================================
+   Plant Grid
+   ======================================== */
+
 .plants {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.25rem;
-  padding: 1rem 0;
+  grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns */
+  gap: var(--space-lg);
+  padding: var(--space-md) 0;
+  margin-bottom: var(--space-xl);
 }
 
-/* ============
+/* ========================================
    Plant Card Styling
-   ============ */
+   ======================================== */
+
 .plant-card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 1.2rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  border: 1px solid #e6e6e6;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-md);
+  border: 3px solid var(--outline);
+  transition: all var(--transition-base);
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Color accent bar at top - uses inline style from component */
+.plant-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--plant-color, var(--primary)); /* Fallback to primary */
+  transform: scaleX(1);
+  transition: transform var(--transition-base);
+}
+
+/* Color accent on left side when hovering */
+.plant-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 6px;
+  background: var(--plant-color, var(--primary));
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform var(--transition-base);
 }
 
 .plant-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--plant-color, var(--primary-lighter));
 }
 
-/* Header inside card */
+.plant-card:hover::after {
+  transform: scaleY(1);
+}
+
+/* ========================================
+   Plant Card Content
+   ======================================== */
+
 .plant-card-info {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #2f4f4f;
-  margin-bottom: 0.75rem;
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+  font-family: var(--font-family-accent);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
 }
 
-/* Plant detail text */
+.plant-card-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
 .plant-card div {
   font-size: 0.95rem;
-  color: #4a4a4a;
-  margin: 0.25rem 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
 }
 
-/* Subtle style for labels */
-.plant-card div::before {
+.plant-card div strong {
+  color: var(--text-primary);
   font-weight: 600;
+  min-width: 100px;
 }
 
-/* Optional: Scroll container if library grows large */
-.plants-container {
-  max-height: calc(100vh - 120px);
-  overflow-y: auto;
+/* ========================================
+   Plant Tags & Pills
+   ======================================== */
+
+.plant-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
 }
 
-
-.plants {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-  padding: 1rem 0;
+.plant-tag {
+  padding: var(--space-xs) var(--space-md);
+  background-color: var(--accent-light);
+  color: var(--secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .in-stash-pill {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-top: 10px;
-  background-color: #2e7d32;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  margin-top: var(--space-md);
+  background: linear-gradient(135deg, var(--success) 0%, #43a047 100%);
   color: white;
-  font-weight: 600;
-  border-radius: 9999px;
-  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
   text-align: center;
+  box-shadow: var(--shadow-sm);
+  border: 2px solid rgba(255, 255, 255, 0.3);
 }
+
+.in-stash-pill::before {
+  content: '✓';
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* ========================================
+   Add to Stash Button
+   ======================================== */
+
+.add-to-stash-btn {
+  width: 100%;
+  margin-top: var(--space-md);
+  padding: var(--space-md);
+  background-color: var(--primary);
+  color: white;
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.add-to-stash-btn:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ========================================
+   Empty State
+   ======================================== */
+
+.plants-empty {
+  text-align: center;
+  padding: var(--space-2xl);
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.plants-empty p {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  margin: var(--space-lg) 0;
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 1200px) {
+  .plants {
+    grid-template-columns: repeat(3, 1fr); /* Keep 3 columns */
+  }
+}
+
+@media (max-width: 768px) {
+  .plants-container {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .plants-container h2 {
+    font-size: 2rem;
+  }
+
+  .plants {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    gap: var(--space-md);
+  }
+
+  .plant-card {
+    padding: var(--space-lg);
+  }
+
+  .plants-header {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .plants {
+    grid-template-columns: 1fr;
+  }
+
+  .plant-card div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .plant-card div strong {
+    min-width: auto;
+  }
+}
+

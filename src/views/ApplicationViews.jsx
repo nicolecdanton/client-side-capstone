@@ -1,8 +1,8 @@
 import { Routes, Route, Outlet } from "react-router"
 import { NavBar } from "../components/nav/NavBar"
-import { PlantList } from "../components/plant library/PlantList"
+import { PlantLibrary } from "../components/plant library/PlantLibrary"
 import { Welcome } from "../components/welcome/Welcome"
-import { MyStash } from "../components/stash/MyStash"
+import { MyStash } from "../components/my stash/MyStash"
 import { useEffect, useState } from "react"
 
 
@@ -27,7 +27,7 @@ export const ApplicationViews = () => {
             <Outlet />
           </> } >
         <Route index element={<Welcome />} />
-        <Route path="plant-library" element={ <PlantList currentUser={currentUser}/> } /> 
+        <Route path="plant-library" element={ <PlantLibrary currentUser={currentUser}/> } /> 
         <Route path="my-stash" element={ <MyStash currentUser={currentUser}/> } />
       </Route>
     </Routes></>

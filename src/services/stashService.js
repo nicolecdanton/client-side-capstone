@@ -4,7 +4,7 @@ export const getStashbyUserId = (userId) => {
 }
 
 
-export const addToStash = (stashItem) => {
+export const addPlantToStash = (stashItem) => {
     return fetch("http://localhost:3001/seed_stash", {
         method: "POST",
         headers: {

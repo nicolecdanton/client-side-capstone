@@ -1,42 +1,172 @@
+/* ========================================
+   App Container & Layout
+   ======================================== */
+
 #root {
-  max-width: 1280px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 70px; /* Account for fixed navbar */
+}
+
+.app-container {
+  flex: 1;
+  min-height: calc(100vh - 70px);
+}
+
+/* ========================================
+   Page Layouts
+   ======================================== */
+
+.page-wrapper {
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: var(--space-xl) var(--space-lg);
+}
+
+.page-header {
   text-align: center;
+  margin-bottom: var(--space-2xl);
+  padding: var(--space-xl) 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.page-title {
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+  font-family: var(--font-family-accent);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.page-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* ========================================
+   Content Sections
+   ======================================== */
+
+.content-section {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--outline);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 2px solid var(--light-gray);
+}
+
+.section-title {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ========================================
+   Grid Layouts
+   ======================================== */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-lg);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-md);
+}
+
+/* ========================================
+   Empty States
+   ======================================== */
+
+.empty-state {
+  text-align: center;
+  padding: var(--space-2xl);
+  color: var(--text-muted);
+}
+
+.empty-state-icon {
+  font-size: 4rem;
+  margin-bottom: var(--space-md);
+  opacity: 0.5;
+}
+
+.empty-state-text {
+  font-size: 1.125rem;
+  margin-bottom: var(--space-md);
+}
+
+/* ========================================
+   Loading States
+   ======================================== */
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  color: var(--text-muted);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--light-gray);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 768px) {
+  #root {
+    padding-top: 60px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .page-wrapper {
+    padding: var(--space-lg) var(--space-md);
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .page-title {
+    font-size: 2rem;
   }
-}
 
-.card {
-  padding: 2em;
-}
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
 
-.read-the-docs {
-  color: #888;
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
 }

@@ -1,79 +1,189 @@
+/* ========================================
+   Login & Auth Container
+   ======================================== */
+
 .container-login {
-  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--accent-light) 100%);
+  padding: var(--space-xl);
+}
+
+.container-login > section {
+  width: 100%;
+  max-width: 480px;
 }
 
 .container-login > section > a {
-  text-decoration: underline;
-  color: var(--secondary);
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transition-base);
+  border-bottom: 2px solid var(--primary-lighter);
 }
 
+.container-login > section > a:hover {
+  color: var(--primary-light);
+  border-bottom-color: var(--primary);
+}
+
+/* ========================================
+   Login Form
+   ======================================== */
+
 .form-login {
-  width: 60%;
-  margin: 2rem auto;
+  width: 100%;
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--outline);
 }
 
 .form-login > h1 {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   text-align: center;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+  font-family: var(--font-family-accent);
 }
 
 .form-login > h2 {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-bottom: var(--space-xl);
 }
 
 .form-login > fieldset > input[type="email"] {
-  width: 25em;
+  width: 100%;
 }
 
 .login-btn {
-  align-self: flex-end;
+  width: 100%;
+  margin-top: var(--space-md);
+  padding: 1rem;
+  font-size: 1.125rem;
 }
 
-.login-btn:focus {
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
-/************* FORM STYLES *************/
+/* ========================================
+   Form Styles
+   ======================================== */
 
 form {
-  margin: 3rem 5rem;
-  border: 1px solid var(--outline);
-  border-radius: 10px;
-  padding: 1rem 0rem 0rem 1rem;
-  box-shadow: 1px 2px 5px lightgray;
-  background-color: var(--offWhite);
+  width: 100%;
 }
 
 fieldset {
   min-width: 0;
-  padding-bottom: 1.5rem;
-  margin: 0;
+  padding: 0;
+  margin: 0 0 var(--space-lg) 0;
   border: 0;
 }
 
 .form-control {
-  height: calc(1.5em + 0.75rem + 2px);
-  padding: 0.375rem 0.75rem;
+  width: 100%;
+  padding: 0.875rem 1rem;
   font-size: 1rem;
-  border: 1px solid var(--outline);
-  border-radius: 0.25rem;
+  border: 2px solid var(--outline);
+  border-radius: var(--radius-md);
+  background-color: white;
+  color: var(--text-primary);
+  transition: all var(--transition-base);
+  font-family: var(--font-family-base);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(45, 106, 79, 0.1);
+}
+
+.form-control::placeholder {
+  color: var(--gray);
 }
 
 .form-group {
-  margin-right: 1rem;
+  margin-bottom: var(--space-lg);
   display: flex;
   flex-direction: column;
 }
 
-.form-btn {
-  align-self: flex-end;
+.form-group label {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.form-btn:focus {
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: 2px;
+.form-btn {
+  width: 100%;
+  margin-top: var(--space-md);
+}
+
+/* ========================================
+   Form Validation & States
+   ======================================== */
+
+.form-control:invalid:not(:placeholder-shown) {
+  border-color: var(--danger);
+}
+
+.form-control:valid:not(:placeholder-shown) {
+  border-color: var(--success);
+}
+
+.error-message {
+  color: var(--danger);
+  font-size: 0.875rem;
+  margin-top: var(--space-sm);
+}
+
+.success-message {
+  color: var(--success);
+  font-size: 0.875rem;
+  margin-top: var(--space-sm);
+}
+
+/* ========================================
+   Auth Links & Footer
+   ======================================== */
+
+.auth-footer {
+  text-align: center;
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--outline);
+}
+
+.auth-footer p {
+  color: var(--text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 768px) {
+  .container-login {
+    padding: var(--space-md);
+  }
+
+  .form-login {
+    padding: var(--space-xl);
+  }
+
+  .form-login > h1 {
+    font-size: 1.875rem;
+  }
+
+  .form-login > h2 {
+    font-size: 1rem;
+  }
 }

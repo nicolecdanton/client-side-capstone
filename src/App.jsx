@@ -1,5 +1,5 @@
 import './App.css'
-import { PlantList } from './components/plant library/PlantList'
+import { PlantLibrary } from './components/plant library/PlantLibrary'
 import { NavBar } from './components/nav/NavBar'
 import { Routes, Route, Outlet } from 'react-router-dom'
 import { Login } from './components/auth/Login'

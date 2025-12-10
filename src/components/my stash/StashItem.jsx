@@ -14,7 +14,9 @@ export const StashItem = ({ stashItem, refreshTheStash }) => {
 
     return (
         <div className="stash-pill"
-                style={{ backgroundColor: stashItem.plant.color }}>
+                style={{
+                    background: stashItem.plant.color || 'linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%)'
+                }}>
             <h2 className="stash-header">{stashItem.plant.plant_type_name} </h2>
              <p className="stash-subheader">{stashItem.plant.varietal_name}</p>
               <button className="delete-stash-btn" onClick={handleDelete}> ✕</button>
